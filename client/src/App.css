@@ -1,0 +1,44 @@
+a{
+    color: #000;
+    text-decoration: none;
+}
+.h2{
+    background-color: #ddd5;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+.listTitle a{
+    color: royalblue;
+    font-size: 18px;
+    min-height: 45px;
+    display: block;
+}
+.blog-desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.tagTxt{
+    font-size: 14px;
+    display: block;
+}
+img{
+    object-fit: cover !important;
+}
+.bannerDiv{
+    position: relative;
+}
+.txt-justify{
+    text-align: justify;
+}
+.bannerDiv h1 {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    font-size: 5em;
+    text-transform: uppercase;
+    color: #fff;
+}
