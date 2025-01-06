@@ -21,9 +21,15 @@ jobs:
     - name: Install dependencies
       run: |
         cd client
-        npm install
+        npm install --legacy-peer-deps
 
-    - name: Build and deploy
+    - name: Build the app
       run: |
         cd client
         npm run build
+
+    - name: Deploy to GitHub Pages
+      run: |
+        cd client
+        npm install gh-pages --save-dev
+        npm run deploy

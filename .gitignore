@@ -5,8 +5,8 @@ node_modules/
 .env
 
 # Ignore build output
-/build
-/dist
+build/
+dist/
 
 # Ignore log files
 *.log
