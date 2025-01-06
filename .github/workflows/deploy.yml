@@ -16,7 +16,7 @@ jobs:
 
       # Step 2: Navigate to the React app folder
       - name: Navigate to app folder
-        working-directory: ./client
+        working-directory: ./MERN/client
         run: echo "In React app folder"
 
       # Step 3: Set up Node.js
