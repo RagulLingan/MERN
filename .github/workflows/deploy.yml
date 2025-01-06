@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy MERN App
 
 on:
   push:
@@ -6,36 +6,24 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-22.04
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      # Step 2: Navigate to the React app folder
-      # - name: Navigate to app folder
-      #   working-directory: ./client
-      #   run: echo "In React app folder"
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      # Step 3: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Install dependencies
+      run: |
+        cd client
+        npm install
 
-      # Step 4: Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Step 5: Build the React app
-      - name: Build project
-        run: npm run build
-
-      # Step 6: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./client/build
+    - name: Build and deploy
+      run: |
+        cd client
+        npm run build
